@@ -5,9 +5,9 @@ const timeOptions = {
   timeStyle: "short",
 };
 curTime.textContent = new Intl.DateTimeFormat("ko-KR", timeOptions).format(new Date());
-// setInterval(function () {
-//   curTime.textContent = new Intl.DateTimeFormat("ko-KR", timeOptions).format(new Date());
-// }, 1000);
+setInterval(function () {
+  curTime.textContent = new Intl.DateTimeFormat("ko-KR", timeOptions).format(new Date());
+}, 1000);
 
 // 북마크
 const bookmarkSection = document.querySelector(".bookmarks");

@@ -20,13 +20,11 @@
 body {
   font-family: "MapleStory";
   min-height: 100vh;
-  padding: 0rem 5rem;
+  padding: 5rem 5rem;
   background: rgb(63, 94, 251);
   background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
-  /* background-image: url(https://cdn.pixabay.com/photo/2013/12/17/20/10/bubbles-230014_640.jpg); */
 }
 .container {
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -45,7 +43,6 @@ body {
 /* 북마크 */
 .bookmarks {
   margin-top: 5rem;
-  /* border: 1px solid red; */
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
@@ -276,10 +273,11 @@ body {
   .container {
     max-width: 100rem;
     display: grid;
-    grid-template-columns: repeat(2, minmax(20rem, 25rem));
+    grid-template-columns: repeat(2, minmax(15rem, 28rem));
     justify-content: space-between;
     margin: 5rem auto 0rem;
     row-gap: 10rem;
+    column-gap: 5rem;
     align-items: start;
   }
   .bookmarks {
