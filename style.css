@@ -1,0 +1,300 @@
+@import "reset.css";
+@font-face {
+  font-family: "MapleStory";
+  src: url("font/Maplestory-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MapleStory";
+  src: url("font/Maplestory-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "MapleStory";
+  min-height: 100vh;
+  padding: 0rem 5rem;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+  /* background-image: url(https://cdn.pixabay.com/photo/2013/12/17/20/10/bubbles-230014_640.jpg); */
+}
+.container {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 시간 */
+.curtime {
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px #333;
+  margin-top: 10rem;
+}
+/* 북마크 */
+.bookmarks {
+  margin-top: 5rem;
+  /* border: 1px solid red; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+  grid-auto-rows: 7rem;
+  gap: 2rem;
+}
+.bookmark {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  position: relative;
+}
+.bookmark:focus {
+  outline: 3px solid blueviolet;
+}
+.bookmark:hover .bookmark__thumbnail {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.bookmark__rmbtn {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  top: 0;
+  right: 0;
+  border-radius: 1rem;
+  border: none;
+  z-index: 1;
+  transform: translate(20%, -20%);
+}
+.bookmark__rmbtn:hover,
+.bookmark__rmbtn:focus {
+  background-color: tomato;
+  outline: none;
+}
+.bookmark__thumbnail {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+.bookmark__thumbnail i {
+  font-size: 3rem;
+}
+.bookmark__thumbnail img {
+  height: 80%;
+}
+.bookmark__name {
+  font-size: 0.8rem;
+  line-height: 2rem;
+  color: whitesmoke;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px black;
+  text-align: center;
+}
+.dialog {
+  background-color: rgb(30, 32, 41);
+  border: none;
+  box-shadow: 0px 0px 10px black;
+  color: whitesmoke;
+  font-weight: normal;
+  padding: 2rem;
+}
+.dialog__input {
+  margin-top: 2rem;
+}
+.dialog__input label {
+  display: block;
+}
+.dialog__input input {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid #999;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0px 1rem;
+  color: whitesmoke;
+}
+.dialog__input input::placeholder {
+  color: #999;
+}
+.dialog__input input:hover,
+.dialog__input input:focus {
+  outline: 3px solid skyblue;
+  border: 1px solid skyblue;
+}
+.dialog__close-save-btn {
+  margin-top: 2rem;
+  text-align: end;
+}
+.dialog__btn {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  min-width: 5rem;
+  border-radius: 1rem;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  background-color: transparent;
+}
+.dialog__btn_close {
+  margin-right: 0.5rem;
+  opacity: 0.8;
+}
+.dialog__btn_close:hover,
+.dialog__btn_close:focus {
+  opacity: 1;
+  outline: none;
+}
+.dialog__btn_save {
+  background-color: rgb(240, 84, 56);
+  border: 1px solid rgb(240, 84, 56);
+  opacity: 0.8;
+}
+.dialog__btn_save:disabled {
+  background-color: #333;
+  border: 1px solid #333;
+}
+.dialog__btn_save:enabled:hover,
+.dialog__btn_save:enabled:focus {
+  outline: none;
+  opacity: 1;
+}
+.todo {
+  margin-top: 5rem;
+  width: 100%;
+}
+.todo__form {
+  position: relative;
+}
+.todo__input {
+  width: 100%;
+  font-family: inherit;
+  background-color: whitesmoke;
+  border: 3px solid #333;
+  border-radius: 1rem;
+  font-size: 1rem;
+  line-height: 2rem;
+  padding: 0rem 3rem 0rem 1rem;
+}
+.todo__input:hover,
+.todo__input:focus {
+  border-color: blueviolet;
+  outline: none;
+}
+.todo__add-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 1rem;
+}
+.todo__add-btn:hover,
+.todo__add-btn:focus {
+  outline: 3px solid blueviolet;
+}
+.todo__add-btn i {
+  font-size: 1.5rem;
+}
+.todo__list {
+  margin-top: 2rem;
+}
+.todo__list-item {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: whitesmoke;
+  display: flex;
+}
+.todo__content {
+  flex: 1;
+  padding-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  position: relative;
+  line-height: 1.5;
+}
+.todo__content:focus {
+  outline: none;
+}
+.todo__content:hover::before,
+.todo__content:focus::before {
+  content: ">";
+  position: absolute;
+  left: 0rem;
+  color: tomato;
+  font-size: bold;
+}
+.todo__content_checked {
+  text-decoration: line-through;
+  color: tomato;
+}
+.todo__rm-btn {
+  font-size: 1rem;
+  background-color: gold;
+  border: 3px solid #333;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todo__rm-btn:hover,
+.todo__rm-btn:focus {
+  background-color: indianred;
+  outline: none;
+}
+.todo__rm-btn i {
+  font-size: 1rem;
+}
+@media screen and (width>=50rem) {
+  body {
+    display: flow-root;
+  }
+  .container {
+    max-width: 100rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(20rem, 25rem));
+    justify-content: space-between;
+    margin: 5rem auto 0rem;
+    row-gap: 10rem;
+    align-items: start;
+  }
+  .bookmarks {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    margin-top: 10rem;
+  }
+  .curtime {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-top: 0rem;
+  }
+  .todo {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    margin-top: 0rem;
+  }
+}

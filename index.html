@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>todoApp</title>
+  </head>
+  <body>
+    <div class="container">
+      <section class="curtime">00:00</section>
+      <section class="bookmarks">
+        <button class="bookmark bookmark__addbtn">
+          <div class="bookmark__thumbnail"><i class="bx bx-plus-circle"></i></div>
+          <div class="bookmark__name">사이트 추가</div>
+        </button>
+      </section>
+      <dialog class="bookmark__dialog dialog">
+        <header class="dialog__header">사이트 수정</header>
+        <form method="dialog" class="dialog__main">
+          <div class="dialog__input">
+            <label for="site-name">이름</label>
+            <input type="text" name="site-name" id="site-name" placeholder="웹 사이트 제목" />
+          </div>
+          <div class="dialog__input">
+            <label for="site-url">URL</label>
+            <input type="text" name="site-url" id="site-url" placeholder="웹 사이트 주소" />
+          </div>
+          <div class="dialog__close-save-btn">
+            <button class="dialog__btn dialog__btn_close" value="cancel" type="reset">취소</button>
+            <button class="dialog__btn dialog__btn_save" value="save" disabled type="submit">저장</button>
+          </div>
+        </form>
+      </dialog>
+      <section class="todo">
+        <form class="todo__form">
+          <input type="text" class="todo__input" placeholder="해야할 일 입력" /><button class="todo__add-btn"><i class="bx bx-right-arrow-alt"></i></button>
+        </form>
+        <ul class="todo__list"></ul>
+      </section>
+    </div>
+  </body>
+</html>
